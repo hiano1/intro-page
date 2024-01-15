@@ -394,7 +394,7 @@ const accordions = skillList.map((data, i) => {
 
 export default function Stack() {
     return (
-        <section className="lg:bg-gray-100/80 p-6 rounded-2xl flex gap-4">
+        <section className="lg:h-full lg:bg-gray-100/80 p-6 rounded-2xl flex gap-4">
             <AccordionList>{accordions}</AccordionList>
         </section>
     );

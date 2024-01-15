@@ -15,7 +15,11 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
         <html lang="en">
-            <body className={gothic.className}>{children}</body>
+            {/* side nav 넣고 one page scroll 사용 */}
+            <body className={gothic.className}>
+                {/* side nav  / layout 말고 page 쪽으로 */}
+                {children}
+            </body>
         </html>
     );
 }

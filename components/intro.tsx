@@ -1,7 +1,7 @@
 import { FireIcon, SunIcon, RocketLaunchIcon, Cog8ToothIcon, AcademicCapIcon } from "@heroicons/react/24/outline";
 function Intro() {
     return (
-        <section className="lg:bg-gray-100/80 p-6 rounded-2xl lg:flex flex-grow justify-evenly">
+        <section className="lg:w-full lg:h-full lg:bg-gray-100/80 p-6 rounded-2xl lg:flex">
             <div className="flex flex-col text-3xl font-bold p-4 gap-4 items-center lg:items-start">
                 <Cog8ToothIcon width={60} />
                 <p>주니어 개발자</p>
