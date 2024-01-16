@@ -8,27 +8,26 @@ export default function Home() {
     const [pageIndex, setPageIndex] = useState(0);
 
     useEffect(() => {
-        if (mainDiv) {
-            if (mainDiv.current) {
-                const ref = mainDiv.current;
-                const wheelHandler = (e: any) => {
-                    e.preventDefault();
-                    const { deltaY } = e;
-                    const { scrollTop } = ref;
-                    const pageHeight = window.innerHeight;
-                    deltaY > 0 ? setPageIndex(pageIndex + 1) : deltaY < 0 ? setPageIndex(pageIndex - 1) : null;
-                    console.log(pageHeight * pageIndex);
-                    ref.scrollTo({
-                        top: pageHeight * pageIndex,
-                        left: 0,
-                        behavior: "smooth",
-                    });
-                };
-                ref.addEventListener("wheel", wheelHandler);
-                return () => {
-                    ref.removeEventListener("wheel", wheelHandler);
-                };
-            }
+        if (mainDiv && mainDiv.current) {
+            const ref = mainDiv.current;
+            const wheelHandler = (e: any) => {
+                e.preventDefault();
+                // add timer
+                const { deltaY } = e;
+                const { scrollTop } = ref;
+                const pageHeight = window.innerHeight;
+                deltaY > 0 ? setPageIndex(pageIndex + 1) : deltaY < 0 ? setPageIndex(pageIndex - 1) : null;
+                // console.log(pageHeight * pageIndex);
+                // ref.scrollTo({
+                //     top: pageHeight * pageIndex,
+                //     left: 0,
+                //     behavior: "smooth",
+                // });
+            };
+            ref.addEventListener("wheel", wheelHandler);
+            return () => {
+                ref.removeEventListener("wheel", wheelHandler);
+            };
         }
     }, [pageIndex]);
 

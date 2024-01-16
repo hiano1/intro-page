@@ -126,5 +126,6 @@ const config: Config = {
         },
     ],
     plugins: [require("@headlessui/tailwindcss")],
+    darkMode: "class",
 };
 export default config;
